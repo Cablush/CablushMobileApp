@@ -39,6 +39,7 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+
 })
 /*
 .controller('PlaylistsCtrl', function($scope) {

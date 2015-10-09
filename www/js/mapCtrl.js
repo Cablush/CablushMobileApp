@@ -56,4 +56,34 @@ angular.module('maps.controller', ['ionic'])
     alert('Example of infowindow with ng-click')
   };
 
+ $scope.showPopup = function() {
+  $scope.busca = {}
+
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<input type="text" ng-model="busca.localizavel">',
+    title: 'Qual local você deseja encontrar',
+    subTitle: 'Digite o nome do local ',
+    scope: $scope,
+    buttons: [
+      { text: 'Cancelar' },
+      {
+        text: '<b>Buscar</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.localizavel) {
+            //don't allow the user to close unless he enters wifi password
+            e.preventDefault();
+          } else {
+            return $scope.data.wifi;
+          }
+        }
+      }
+    ]
+  });
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+ };
+ 
 });
