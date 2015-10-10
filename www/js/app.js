@@ -40,11 +40,11 @@ angular.module('starter', ['ionic', 'cablushApp'])
       }
     }
   })
-  .state('app.playlists', {
-      url: '/playlists',
+  .state('app.home', {
+      url: '/home',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/home.html',
           controller: 'MapCtrl'
         }
       }
@@ -60,5 +60,5 @@ angular.module('starter', ['ionic', 'cablushApp'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/templates/home');
 });

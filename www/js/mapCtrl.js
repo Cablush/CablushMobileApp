@@ -1,11 +1,11 @@
 angular.module('cablushApp')
 .controller('MapCtrl', function($scope, $ionicLoading, $compile) {
   function initialize() {
-    var myLatlng = new google.maps.LatLng(43.07493, -89.381388);
+    var myLatlng = new google.maps.LatLng(-19.890723, -44.033203);
 
     var mapOptions = {
       center: myLatlng,
-      zoom: 16,
+      zoom: 4,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById("map"),

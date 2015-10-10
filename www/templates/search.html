@@ -1,5 +1,29 @@
-<ion-view view-title="Search">
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Buscar</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeSearch()">Fechar</button>
+    </div>
+  </ion-header-bar>
   <ion-content>
-    <h1>Search</h1>
+    <form ng-submit="doBuscar()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Esporte</span>
+          <input type="text" ng-model="buscarData.esporte">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Localizavel</span>
+          <input type="text" ng-model="buscarData.localizavel">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Nome</span>
+          <input type="text" ng-model="buscarData.nome">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Buscar</button>
+        </label>
+      </div>
+    </form>
   </ion-content>
-</ion-view>
+</ion-modal-view>
