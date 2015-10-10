@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('cablushApp', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -41,8 +41,9 @@ angular.module('starter.controllers', [])
   };
 
 })
+
 /*
-.controller('PlaylistsCtrl', function($scope) {
+.controller('MapCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },

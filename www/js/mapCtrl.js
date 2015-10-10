@@ -1,5 +1,4 @@
-angular.module('maps.controller', ['ionic'])
-
+angular.module('cablushApp')
 .controller('MapCtrl', function($scope, $ionicLoading, $compile) {
   function initialize() {
     var myLatlng = new google.maps.LatLng(43.07493, -89.381388);
