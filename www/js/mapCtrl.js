@@ -10,10 +10,8 @@ angular.module('cablushApp')
     };
     var map = new google.maps.Map(document.getElementById("map"),
       mapOptions);
-
-    //Marker + infowindow + angularjs compiled ng-click
-    var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
-    var compiled = $compile(contentString)($scope);
+    
+    var compiled = $compile(markerPopup(local))($scope);
 
     var infowindow = new google.maps.InfoWindow({
       content: compiled[0]
@@ -55,34 +53,23 @@ angular.module('cablushApp')
     alert('Example of infowindow with ng-click')
   };
 
- $scope.showPopup = function() {
-  $scope.busca = {}
+ function markerPopup( local ){
+          /*
+          var content = '<div class="infoWindowContent">';
+          content += ''+local.nome+'<br/>';
+          content += ''+local.logradouro+'<br/>'
+          content += ''+local.descricao+'<br/>';
+          content += ''+local.esportes;
+          content += '</div>'
+          */
 
-  // An elaborate, custom popup
-  var myPopup = $ionicPopup.show({
-    template: '<input type="text" ng-model="busca.localizavel">',
-    title: 'Qual local você deseja encontrar',
-    subTitle: 'Digite o nome do local ',
-    scope: $scope,
-    buttons: [
-      { text: 'Cancelar' },
-      {
-        text: '<b>Buscar</b>',
-        type: 'button-positive',
-        onTap: function(e) {
-          if (!$scope.data.localizavel) {
-            //don't allow the user to close unless he enters wifi password
-            e.preventDefault();
-          } else {
-            return $scope.data.wifi;
-          }
-        }
-      }
-    ]
-  });
-  myPopup.then(function(res) {
-    console.log('Tapped!', res);
-  });
- };
+          var content = '<div class="infoWindowContent">';
+          content += ' TESTE <br/>';
+          content += ' Rua teste <br/>'
+          content += 'Teste de local de teste muito legal o teste <br/>';
+          content += '[Teste, teste, outro Teste]';
+          content += '</div>'
+          return content;
+ }
  
 });
