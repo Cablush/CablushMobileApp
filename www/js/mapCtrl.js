@@ -11,7 +11,7 @@ angular.module('cablushApp')
     var map = new google.maps.Map(document.getElementById("map"),
       mapOptions);
     
-    var compiled = $compile(markerPopup(local))($scope);
+    var compiled = $compile(markerPopup(""))($scope);
 
     var infowindow = new google.maps.InfoWindow({
       content: compiled[0]
@@ -64,7 +64,7 @@ angular.module('cablushApp')
           */
 
           var content = '<div class="infoWindowContent">';
-          content += ' TESTE <br/>';
+          content += '<center> <b>TESTE</b></center> <br/>';
           content += ' Rua teste <br/>'
           content += 'Teste de local de teste muito legal o teste <br/>';
           content += '[Teste, teste, outro Teste]';

@@ -60,5 +60,5 @@ angular.module('starter', ['ionic', 'cablushApp'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/templates/home');
+  $urlRouterProvider.otherwise('/app/home');
 });
