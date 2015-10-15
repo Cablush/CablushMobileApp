@@ -63,12 +63,6 @@ angular.module('cablushApp')
           content += '</div>'
           */
 
-          var content = '<div class="infoWindowContent">';
-          content += '<center> <b>TESTE</b></center> <br/>';
-          content += ' Rua teste <br/>'
-          content += 'Teste de local de teste muito legal o teste <br/>';
-          content += '[Teste, teste, outro Teste]';
-          content += '</div>'
-          return content;
+          
  }
 });
