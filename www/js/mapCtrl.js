@@ -10,10 +10,8 @@ angular.module('cablushApp')
     };
     var map = new google.maps.Map(document.getElementById("map"),
       mapOptions);
-
-    //Marker + infowindow + angularjs compiled ng-click
-    var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
-    var compiled = $compile(contentString)($scope);
+    
+    var compiled = $compile(markerPopup(local))($scope);
 
     var infowindow = new google.maps.InfoWindow({
       content: compiled[0]
@@ -54,4 +52,23 @@ angular.module('cablushApp')
   $scope.clickTest = function() {
     alert('Example of infowindow with ng-click')
   };
+
+ function markerPopup( local ){
+          /*
+          var content = '<div class="infoWindowContent">';
+          content += ''+local.nome+'<br/>';
+          content += ''+local.logradouro+'<br/>'
+          content += ''+local.descricao+'<br/>';
+          content += ''+local.esportes;
+          content += '</div>'
+          */
+
+          var content = '<div class="infoWindowContent">';
+          content += ' TESTE <br/>';
+          content += ' Rua teste <br/>'
+          content += 'Teste de local de teste muito legal o teste <br/>';
+          content += '[Teste, teste, outro Teste]';
+          content += '</div>'
+          return content;
+ }
 });
