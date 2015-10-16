@@ -1,6 +1,7 @@
 angular.module('cablushApp')
-.controller('MapCtrl', function($scope, $ionicLoading, $compile) {
-  function initialize() {
+.controller('MapCtrl', function($scope, $ionicLoading, $compile, $cordovaGeolocation) {
+
+function initialize() {
     var myLatlng = new google.maps.LatLng(-19.890723, -44.033203);
 
     var mapOptions = {
@@ -53,16 +54,39 @@ angular.module('cablushApp')
     alert('Example of infowindow with ng-click')
   };
 
+  function createMaker(local){
+    var nomeTipo;
+      var image = {
+      url: 'https://s3.amazonaws.com/denguereport/ic_substituicao.png',
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(0, 32)
+    };
+   
+    
+      var marker = new google.maps.Marker({
+          map: $scope.map,
+          icon: image,
+          position: new google.maps.LatLng(info.latitude, info.longitude)
+      });
+      marker.content = markerPopup(local) ;
+      
+      google.maps.event.addListener(marker, 'click', function(){
+          infoWindow.setContent(marker.content);
+          infoWindow.open($scope.map, marker);
+      });
+      
+      $scope.markers.push(marker);
+  }
+
  function markerPopup( local ){
-          /*
+          
           var content = '<div class="infoWindowContent">';
           content += ''+local.nome+'<br/>';
           content += ''+local.logradouro+'<br/>'
           content += ''+local.descricao+'<br/>';
           content += ''+local.esportes;
           content += '</div>'
-          */
 
-          
+          return content;
  }
 });
